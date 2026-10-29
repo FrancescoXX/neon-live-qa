@@ -12,9 +12,7 @@ export default defineConfig({
       // A missing origin does not throw: the subscription stays on "connecting".
       allowedOrigins: [
         "http://localhost:3000",
-        // After the first Vercel deploy, add the production origin here and run
-        // `neon deploy` again. Example:
-        // "https://your-app.vercel.app"
+        "https://neon-live-qa.vercel.app",
       ],
     },
   },
