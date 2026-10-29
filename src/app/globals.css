@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --color-paper: #efe6d6;
+  --color-ink: #221c16;
+  --color-card: #fffaf2;
+  --color-line: #e4d8c4;
+  --color-muted: #6f6558;
+  --color-accent: #9d1c2b;
+  --color-accent-ink: #fff7f5;
+  --color-live: #1f7a4d;
+  --color-warn: #8a4b12;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgb(157 28 43 / 8%), transparent 32rem),
+    var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.live-dot {
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+}
+
+@keyframes live-pulse {
+  50% {
+    opacity: 0.4;
+  }
+}
