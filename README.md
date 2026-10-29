@@ -120,11 +120,10 @@ Open two browsers. Create a session on the home page. The audience link is `/s/[
 
 1. Import the repo. Framework preset: Next.js.
 2. Add the same three environment variables from `.env.local`: `DATABASE_URL`, `NEON_REALTIME_URL`, `NEON_REALTIME_SECRET`. Do not prefix the secret with `NEXT_PUBLIC_`. The browser receives the WebSocket URL as a prop at request time, so the build does not need it inlined.
-3. Deploy once, copy the site origin (for example `https://your-app.vercel.app`).
-4. Put that origin in `allowedOrigins` in `neon.ts`, next to `http://localhost:3000`.
-5. Run `neon deploy` again so Realtime accepts the browser WebSocket.
+3. Production origin `https://neon-live-qa.vercel.app` is already in `allowedOrigins` in `neon.ts`, next to `http://localhost:3000`.
+4. Run `neon deploy` again so Realtime accepts the browser WebSocket from that origin.
 
-Until step 5, the Vercel site can create rows, but subscriptions sit on **Connecting**.
+Until step 4, the Vercel site can create rows, but subscriptions sit on **Connecting**.
 
 Vercel preview deployments each have their own origin. Add each origin you actually use, or the preview will hang the same way. There is a limit of 16 origins.
 
